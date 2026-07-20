@@ -1,0 +1,16 @@
+{
+  "name": "feature-flag-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Feature flag system demo for IT company presentations",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "server": "npm run start --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "npm run install:all && concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
